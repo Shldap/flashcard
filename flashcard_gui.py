@@ -36,6 +36,10 @@ class FlashcardGUI:
             messagebox.showinfo("Correct", "Your answer is correct!")
         else:
             messagebox.showerror("Incorrect", f"Sorry, the correct answer is {correct_answer}")
+     def show_answer(self):
+        current_flashcard = self.flashcards[self.current_flashcard_index]
+        messagebox.showinfo("Answer", current_flashcard["answer"])
+
 
     def next_flashcard(self):
         self.answer_entry.delete(0, tk.END)
