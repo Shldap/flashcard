@@ -48,14 +48,14 @@ class FlashcardGUI:
             self.logic.load_flashcards(file_path)
             messagebox.showinfo("Success", "Flashcards imported successfully!")
 
-    def add_custom_flashcard(self):
-        question = messagebox.askquestion("Question", "Enter the question for your custom flashcard:")
-        if question:
-            answer = messagebox.askquestion("Answer", "Enter the answer for your custom flashcard:")
-            if answer:
-                self.logic.add_custom_flashcard(question, answer)
-                messagebox.showinfo("Success", "Custom flashcard added successfully!")
-                self.next_flashcard()
-
+        def add_custom_flashcard(self):
+         question = messagebox.askstring("Question", "Enter the question for your custom flashcard:")
+         if question:
+             answer = messagebox.askstring("Answer", "Enter the answer for your custom flashcard:")
+             if answer:
+                 self.logic.add_custom_flashcard(question, answer)
+                 messagebox.showinfo("Success", "Custom flashcard added successfully!")
+             self.next_flashcard()
+             
     def start(self):
         self.root.mainloop()
